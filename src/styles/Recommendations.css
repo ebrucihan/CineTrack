@@ -1,0 +1,207 @@
+
+/* CINETRACK - PERSONAL RECOMMENDATIONS */
+
+.recommendations-section {
+  margin: 52px 0;
+  padding: 30px;
+  border: 1px solid rgba(169, 112, 255, 0.24);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(115, 58, 169, 0.17),
+      transparent 48%
+    ),
+    #15111e;
+}
+
+.recommendations-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.recommendations-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c79aff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.recommendations-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 13px 0 10px;
+  color: #f8f3fc;
+  font-size: 27px;
+}
+
+.recommendations-heading h2 svg {
+  color: #c18cff;
+}
+
+.recommendations-heading p {
+  margin: 0;
+  color: #a99bb6;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.recommendations-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 11px 16px;
+  border: 1px solid #68478a;
+  border-radius: 11px;
+  background: #30213f;
+  color: #e8d4ff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.recommendations-refresh:hover {
+  background: #493063;
+}
+
+.recommendations-refresh:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.recommendations-source-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  color: #d5b8f4;
+  font-size: 13px;
+}
+
+.recommendations-source-info svg {
+  color: #f8c55c;
+}
+
+.recommendations-scroll {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 8px 3px 23px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: #68478a transparent;
+}
+
+.recommendations-item {
+  flex: 0 0 220px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.recommendations-item .movie-card {
+  height: 100%;
+}
+
+.recommendations-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 45px 20px;
+  border: 1px dashed #544064;
+  border-radius: 16px;
+  background: rgba(30, 22, 41, 0.65);
+  text-align: center;
+}
+
+.recommendations-empty-icon {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #3d2851;
+  color: #d5a8ff;
+}
+
+.recommendations-empty h3 {
+  margin: 8px 0 0;
+  color: #f4eaff;
+  font-size: 20px;
+}
+
+.recommendations-empty p {
+  max-width: 480px;
+  margin: 0;
+  color: #b4a5c1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.recommendations-empty > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: #d6b6f5;
+  font-size: 12px;
+}
+
+.recommendations-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 45px 15px;
+  color: #d6b6f5;
+  font-size: 14px;
+}
+
+.recommendations-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #4d355f;
+  border-top-color: #c18cff;
+  border-radius: 50%;
+  animation: recommendations-spin 0.8s linear infinite;
+}
+
+@keyframes recommendations-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .recommendations-section {
+    margin: 35px 0;
+    padding: 20px 14px;
+  }
+
+  .recommendations-heading h2 {
+    font-size: 22px;
+  }
+
+  .recommendations-item {
+    flex-basis: 185px;
+  }
+
+  .recommendations-empty {
+    padding: 32px 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recommendations-spinner {
+    animation: none;
+  }
+}

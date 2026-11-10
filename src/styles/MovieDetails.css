@@ -1,0 +1,1049 @@
+
+/* CINETRACK 2.0 - MOVIE DETAILS */
+
+.details-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 22px;
+  background: rgba(3, 2, 8, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.details-modal {
+  position: relative;
+  width: min(1120px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  border: 1px solid #493159;
+  border-radius: 24px;
+  background: #15111d;
+  color: #f8f5fc;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.6);
+  scrollbar-width: thin;
+  scrollbar-color: #73518f transparent;
+}
+
+.details-close {
+  position: sticky;
+  top: 20px;
+  float: right;
+  margin: 20px 20px -68px 0;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: rgba(12, 9, 18, 0.85);
+  color: white;
+  cursor: pointer;
+}
+
+.details-close:hover {
+  background: #a970ff;
+  color: #100a17;
+}
+
+.details-backdrop {
+  height: 310px;
+  background-size: cover;
+  background-position: center 30%;
+}
+
+.details-body {
+  position: relative;
+  padding: 0 42px 40px;
+}
+
+.details-hero-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 36px;
+  margin-top: -125px;
+  align-items: end;
+}
+
+.details-poster {
+  height: 330px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #30243b;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+}
+
+.details-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details-primary {
+  padding-top: 90px;
+  min-width: 0;
+}
+
+.details-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border-radius: 20px;
+  background: #493060;
+  color: #e4c5ff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.details-primary h2 {
+  margin: 15px 0;
+  font-size: clamp(28px, 3.5vw, 43px);
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.details-tagline {
+  color: #c4b2d1;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.details-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+  margin: 18px 0;
+  color: #e0d5e9;
+  font-size: 14px;
+}
+
+.details-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.details-meta svg {
+  color: #c08aff;
+}
+
+.details-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 17px 0;
+}
+
+.details-genres span {
+  padding: 7px 12px;
+  border: 1px solid #604276;
+  border-radius: 20px;
+  color: #d8b4fe;
+  font-size: 12px;
+}
+
+.details-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.details-action-btn,
+.details-select-wrap {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid #78519c;
+  border-radius: 11px;
+  background: #30213f;
+  color: #f2e7ff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.details-action-btn {
+  cursor: pointer;
+}
+
+.details-action-btn:hover {
+  background: #4a2c60;
+}
+
+.details-action-btn.is-favorite {
+  color: #ff789c;
+}
+
+.details-select-wrap select {
+  max-width: 180px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.details-select-wrap option,
+.details-my-rating option {
+  background: #241b30;
+  color: white;
+}
+
+.details-remove-btn {
+  padding: 9px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 1px solid #493650;
+  border-radius: 9px;
+  color: #c8b5d5;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.details-remove-btn:hover {
+  border-color: #d194b1;
+  color: #ffc2d7;
+}
+
+.details-my-rating {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 19px;
+}
+
+.details-my-rating > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #e5caff;
+  font-size: 14px;
+}
+
+.details-my-rating select {
+  padding: 10px 14px;
+  border: 1px solid #78519c;
+  border-radius: 10px;
+  background: #30213f;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.details-section {
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid #30253a;
+}
+
+.details-section h3 {
+  margin: 0 0 17px;
+  font-size: 21px;
+  color: #f5eafd;
+}
+
+.details-section p {
+  color: #c9bbd2;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cast-card {
+  min-width: 0;
+}
+
+.cast-photo {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #2c2337;
+  color: #a970ff;
+  font-size: 30px;
+}
+
+.cast-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cast-card strong {
+  display: block;
+  margin-top: 9px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cast-card > span {
+  display: block;
+  margin-top: 4px;
+  color: #ac9bb8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.trailer-preview {
+  width: 100%;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid #5a3d70;
+  border-radius: 17px;
+  background-color: #261a35;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.trailer-play {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #aa70ff;
+  color: #140a1e;
+}
+
+.trailer-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: black;
+}
+
+.trailer-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.trailer-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: #cba2ff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.details-loading {
+  padding-top: 20px;
+  color: #c8b7d5;
+}
+
+.details-bottom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 38px;
+  color: #81748e;
+  font-size: 11px;
+}
+
+@media (max-width: 850px) {
+  .cast-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .details-hero-layout {
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .details-poster {
+    height: 255px;
+  }
+
+  .details-body {
+    padding: 0 24px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .details-overlay {
+    padding: 8px;
+  }
+
+  .details-modal {
+    max-height: 96vh;
+    border-radius: 16px;
+  }
+
+  .details-backdrop {
+    height: 210px;
+  }
+
+  .details-body {
+    padding: 0 18px 24px;
+  }
+
+  .details-hero-layout {
+    display: block;
+    margin-top: -65px;
+  }
+
+  .details-poster {
+    width: 120px;
+    height: 180px;
+  }
+
+  .details-primary {
+    padding-top: 20px;
+  }
+
+  .details-primary h2 {
+    font-size: 29px;
+  }
+
+  .cast-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .details-meta {
+    gap: 10px;
+  }
+
+  .trailer-preview {
+    min-height: 190px;
+  }
+}
+
+/* ========================================
+   CINETRACK 2.0 - STAR RATING
+======================================== */
+
+.details-rating-card {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid rgba(169, 112, 255, 0.28);
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(87, 51, 117, 0.24),
+    rgba(25, 19, 35, 0.9)
+  );
+}
+
+.rating-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.rating-card-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e6caff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.rating-card-title svg {
+  color: #c18cff;
+}
+
+.rating-card-score {
+  color: #f8c55c;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.rating-star {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 42px;
+  display: grid;
+  place-items: center;
+  padding: 5px 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #665b72;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.rating-star.filled {
+  color: #f8c55c;
+}
+
+.rating-star:hover,
+.rating-star:focus-visible {
+  transform: translateY(-3px) scale(1.08);
+  background: rgba(248, 197, 92, 0.08);
+}
+
+.rating-star:focus-visible {
+  outline: 2px solid #c18cff;
+  outline-offset: 2px;
+}
+
+.rating-star svg {
+  width: 100%;
+  max-width: 27px;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.rating-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.rating-card-bottom > span {
+  color: #aa9bb8;
+  font-size: 12px;
+}
+
+.rating-clear {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border: 1px solid #4d3a5b;
+  border-radius: 8px;
+  background: transparent;
+  color: #cdb8dc;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.rating-clear:hover {
+  color: #ffc5d7;
+  border-color: #c78baa;
+}
+
+@media (max-width: 600px) {
+  .details-rating-card {
+    padding: 15px;
+  }
+
+  .rating-stars {
+    gap: 2px;
+  }
+
+  .rating-star {
+    padding: 4px 0;
+  }
+
+  .rating-card-score {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rating-star {
+    transition: none;
+  }
+}
+
+/* ==========================================
+   CINETRACK - MOVIE DETAILS
+   RESPONSIVE FINAL UPGRADE
+   ========================================== */
+
+/* TABLET */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .details-overlay {
+    padding: 18px;
+  }
+
+  .details-modal {
+    width: 100%;
+    max-height: 94dvh;
+  }
+
+  .details-backdrop {
+    height: 270px;
+  }
+
+  .details-body {
+    padding: 0 28px 32px;
+  }
+
+  .details-hero-layout {
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 25px;
+    margin-top: -105px;
+  }
+
+  .details-poster {
+    height: 263px;
+  }
+
+  .details-primary {
+    padding-top: 75px;
+  }
+
+  .details-primary h2 {
+    font-size: clamp(27px, 3.5vw, 36px);
+  }
+
+  .details-actions {
+    gap: 9px;
+  }
+
+  .cast-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .details-rating-card {
+    padding: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  /* MODAL */
+
+  .details-overlay {
+    align-items: center;
+    padding: 7px;
+    padding-top: max(7px, env(safe-area-inset-top));
+    padding-bottom: max(7px, env(safe-area-inset-bottom));
+    z-index: 1200;
+  }
+
+  .details-modal {
+    width: 100%;
+    max-height: 96vh;
+    max-height: 96dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 17px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* CLOSE BUTTON */
+
+  .details-close {
+    top: 12px;
+    width: 42px;
+    height: 42px;
+    margin: 12px 12px -54px 0;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(14, 10, 21, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* BACKDROP & POSTER */
+
+  .details-backdrop {
+    height: 185px;
+    background-position: center 30%;
+  }
+
+  .details-body {
+    min-width: 0;
+    padding: 0 16px 25px;
+  }
+
+  .details-hero-layout {
+    display: block;
+    margin-top: -55px;
+  }
+
+  .details-poster {
+    width: 112px;
+    height: 168px;
+    border: 2px solid rgba(255, 255, 255, 0.09);
+    border-radius: 13px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .details-primary {
+    min-width: 0;
+    padding-top: 19px;
+  }
+
+  .details-category {
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+
+  .details-primary h2 {
+    margin: 12px 0;
+    font-size: clamp(25px, 7vw, 31px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .details-tagline {
+    margin-bottom: 13px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* MOVIE INFORMATION */
+
+  .details-meta {
+    gap: 10px 14px;
+    margin: 14px 0;
+    font-size: 12px;
+  }
+
+  .details-meta span {
+    gap: 5px;
+  }
+
+  .details-meta svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .details-genres {
+    gap: 7px;
+    margin: 14px 0;
+  }
+
+  .details-genres span {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  /* FAVORITES & WATCHLIST ACTIONS */
+
+  .details-actions {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .details-action-btn,
+  .details-select-wrap {
+    min-height: 46px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .details-action-btn {
+    justify-content: center;
+    flex: 1 1 135px;
+  }
+
+  .details-select-wrap {
+    flex: 1 1 165px;
+    min-width: 0;
+  }
+
+  .details-select-wrap select {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 12px;
+  }
+
+  .details-remove-btn {
+    min-height: 42px;
+    justify-content: center;
+    padding: 9px 12px;
+  }
+
+  /* PERSONAL RATING */
+
+  .details-my-rating {
+    gap: 10px;
+    margin-top: 17px;
+  }
+
+  .details-my-rating > span {
+    font-size: 12px;
+  }
+
+  .details-my-rating select {
+    min-height: 43px;
+    font-size: 13px;
+  }
+
+  /* STAR RATING CARD */
+
+  .details-rating-card {
+    margin-top: 21px;
+    padding: 17px 13px;
+    border-radius: 14px;
+  }
+
+  .rating-card-header {
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+
+  .rating-card-title {
+    gap: 7px;
+    font-size: 13px;
+  }
+
+  .rating-card-title svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .rating-card-score {
+    font-size: 19px;
+    white-space: nowrap;
+  }
+
+  .rating-stars {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2px;
+    width: 100%;
+  }
+
+  .rating-star {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    min-height: 38px;
+    padding: 6px 1px;
+    border-radius: 7px;
+    touch-action: manipulation;
+  }
+
+  .rating-star svg {
+    width: min(100%, 24px);
+    max-width: 24px;
+    height: auto;
+  }
+
+  .rating-card-bottom {
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .rating-card-bottom > span {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .rating-clear {
+    min-height: 36px;
+    padding: 8px 10px;
+  }
+
+  /* DESCRIPTION & SECTIONS */
+
+  .details-section {
+    margin-top: 27px;
+    padding-top: 23px;
+  }
+
+  .details-section h3 {
+    margin-bottom: 13px;
+    font-size: 19px;
+  }
+
+  .details-section p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* CAST */
+
+  .cast-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cast-photo {
+    border-radius: 10px;
+  }
+
+  .cast-card strong {
+    margin-top: 7px;
+    font-size: 11px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .cast-card > span {
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  /* TRAILER */
+
+  .trailer-preview {
+    min-height: 180px;
+    gap: 12px;
+    padding: 15px;
+    border-radius: 13px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .trailer-play {
+    width: 55px;
+    height: 55px;
+  }
+
+  .trailer-play svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .trailer-frame {
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+  }
+
+  .trailer-external {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .details-bottom {
+    flex-wrap: wrap;
+    margin-top: 28px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+/* VERY SMALL PHONES */
+
+@media (max-width: 360px) {
+  .details-overlay {
+    padding: 4px;
+  }
+
+  .details-body {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .details-backdrop {
+    height: 160px;
+  }
+
+  .details-primary h2 {
+    font-size: 24px;
+  }
+
+  .details-actions {
+    flex-direction: column;
+  }
+
+  .details-action-btn,
+  .details-select-wrap {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .details-rating-card {
+    padding: 14px 10px;
+  }
+
+  .rating-star {
+    min-height: 34px;
+  }
+
+  .rating-star svg {
+    max-width: 21px;
+  }
+
+  .cast-grid {
+    gap: 9px;
+  }
+}
+
+/* TOUCH DEVICES */
+
+@media (hover: none) and (pointer: coarse) {
+  .details-action-btn,
+  .details-select-wrap,
+  .details-my-rating select {
+    touch-action: manipulation;
+  }
+
+  .rating-star:hover {
+    transform: none;
+    background: transparent;
+  }
+
+  .rating-star.filled:hover {
+    color: #f8c55c;
+  }
+
+  .details-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .rating-star,
+  .details-action-btn {
+    transition: none;
+  }
+}

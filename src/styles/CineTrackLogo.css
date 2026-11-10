@@ -1,0 +1,54 @@
+
+/* ==================================
+   CINETRACK - MODERN RETRO CT LOGO
+================================== */
+
+.ct-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 112px;
+  flex-shrink: 0;
+  line-height: 1;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.ct-logo__art {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.brand-logo:hover .ct-logo {
+  transform: translateY(-2px) scale(1.04);
+  filter: drop-shadow(
+    0 5px 10px rgba(169, 112, 255, 0.2)
+  );
+}
+
+/* Laptop ve tablet */
+
+@media (max-width: 900px) {
+  .ct-logo {
+    width: 100px;
+  }
+}
+
+/* Telefon */
+
+@media (max-width: 600px) {
+  .ct-logo {
+    width: 82px;
+  }
+}
+
+/* Hareket azaltma tercihi */
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-logo {
+    transition: none;
+  }
+}
