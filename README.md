@@ -43,8 +43,6 @@ React ve Vite kullanılarak geliştirilmiş olup film ve dizi verilerini The Mov
 
 ## 📸 Ekran Görüntüleri
 
-## 📸 Ekran Görüntüleri
-
 ### Ana Sayfa
 ![Ana Sayfa](screenshots/homepage.png)
 
