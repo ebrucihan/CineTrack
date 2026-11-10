@@ -43,7 +43,28 @@ React ve Vite kullanılarak geliştirilmiş olup film ve dizi verilerini The Mov
 
 ## 📸 Ekran Görüntüleri
 
-CineTrack'in masaüstü ve mobil arayüzünden ekran görüntüleri bu bölüme eklenecektir.
+## 📸 Ekran Görüntüleri
+
+### Ana Sayfa
+![Ana Sayfa](screenshots/homepage.png)
+
+### Kişiselleştirilmiş Öneriler
+![Öneriler](screenshots/recommendations.png)
+
+### Film ve Dizi Keşfi
+![Keşfet](screenshots/discover.png)
+
+### İzleme Listem
+![İzleme Listem](screenshots/watchlist.png)
+
+### Favorilerim
+![Favorilerim](screenshots/favorites.png)
+
+### Profilim
+![Profilim](screenshots/profile.png)
+
+### İzleme İstatistikleri
+![İstatistikler](screenshots/statistics.png)
 
 ## 🚀 Kurulum
 
